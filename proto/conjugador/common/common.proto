@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package conjugador.common;
+
+option go_package = "el-conjugador/proto/gen/conjugador/common";
+
+message Void {}

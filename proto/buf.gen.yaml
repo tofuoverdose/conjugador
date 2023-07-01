@@ -1,0 +1,20 @@
+version: v1
+plugins:
+  - plugin: go
+    out: gen
+    opt:
+#      source_relative means that the generated file's path mirrors the path of .proto file
+      - paths=source_relative
+  - plugin: go-grpc
+    out: gen
+    opt:
+      - paths=source_relative
+  - plugin: grpc-gateway
+    out: gen
+    opt:
+      - generate_unbound_methods=true
+      - paths=source_relative
+  - plugin: openapiv2
+    out: openapi
+    strategy: all
+    opt: allow_merge=true,merge_file_name=conjugador.v1

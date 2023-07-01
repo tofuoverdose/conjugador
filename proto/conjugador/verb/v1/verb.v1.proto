@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package conjugador.verb.v1;
+
+option go_package = "el-conjugador/proto/gen/conjugador/v1/verb";
+
+service Service {
+  rpc SearchVerbs(SearchVerbsParams) returns (SearchVerbsResult);
+}
+
+message SearchVerbsParams {
+  string text = 1;
+  uint64 limit = 2;
+}
+
+message SearchVerbsResult {
+
+}
+
+message Verb {
+  message Infinitive {
+    enum Mood {
+      MOOD_INDICATIVE = 0;
+      MOOD_SUBJUNCTIVE = 1;
+    }
+
+    string text = 1;
+    repeated string translations = 2;
+    Mood mood = 3;
+    bool regular = 4;
+  }
+
+  enum Tense {
+    TENSE_SIMPLE_PRESENT = 0;
+  }
+
+  message Conjugation {
+    enum Performer {
+      PERFORMER_ME = 0;
+      PERFORMER_U = 1;
+      PERFORMER_HE_SHE_FU = 2;
+      PERFORMER_WE = 3;
+      PERFORMER_THEY_FYALL = 4;
+      PERFORMER_YALL = 5;
+    }
+
+    string text = 1;
+    Performer performer = 2;
+  }
+
+  string id = 1;
+  Infinitive infinitive = 2;
+  repeated Conjugation conjugations = 3;
+}

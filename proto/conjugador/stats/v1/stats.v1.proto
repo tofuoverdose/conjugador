@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package conjugador.stats.v1;
+
+option go_package = "el-conjugador/proto/gen/conjugador/v1/stats";
+
+import "conjugador/common/common.proto";
+
+service Service {
+  rpc MarkSentenceCompleted(MarkSentenceCompletedParams) returns (common.Void);
+}
+
+message SentenceRating {
+  enum Type {
+    SENTENCE_RATING_NONE = 0;
+    SENTENCE_RATING_LIKE = 1;
+    SENTENCE_RATING_DISLIKE = 2;
+  }
+
+  Type type = 1;
+  repeated string points = 2;
+}
+
+message MarkSentenceCompletedParams {
+  string sentenceId = 1;
+  bool correctly = 2;
+  SentenceRating rating = 3;
+}

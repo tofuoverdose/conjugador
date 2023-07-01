@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package conjugador.auth.v1;
+
+import "conjugador/common/common.proto";
+import "google/api/annotations.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option go_package = "el-conjugador/proto/gen/conjugador/v1/auth";
+
+service Service {
+  rpc SignUp(SignUpParams) returns (SignUpResult);
+  rpc SignIn(SignInParams) returns (SignInResult);
+  rpc Purge(PurgeParams) returns (common.Void);
+}
+
+message SignUpParams {
+
+}
+
+message SignUpResult {
+
+}
+
+message SignInParams {
+
+}
+
+message SignInResult {
+
+}
+
+message PurgeParams {
+
+}

@@ -1,0 +1,146 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Conjugador API",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Service"
+    },
+    {
+      "name": "Service"
+    },
+    {
+      "name": "Service"
+    },
+    {
+      "name": "Service"
+    },
+    {
+      "name": "Service"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "commonVoid": {
+      "type": "object"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1ExerciseResult": {
+      "type": "object",
+      "properties": {
+        "sentences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Sentence"
+          }
+        }
+      }
+    },
+    "v1GetPracticeSetResult": {
+      "type": "object"
+    },
+    "v1ListVerbsInPracticeSetResult": {
+      "type": "object"
+    },
+    "v1Profile": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RemoveVerbFromPracticeSetResult": {
+      "type": "object"
+    },
+    "v1SearchVerbsResult": {
+      "type": "object"
+    },
+    "v1Sentence": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "blankPosition": {
+          "type": "string",
+          "format": "int64"
+        },
+        "answer": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SentenceRating": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/v1SentenceRatingType"
+        },
+        "points": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1SentenceRatingType": {
+      "type": "string",
+      "enum": [
+        "SENTENCE_RATING_NONE",
+        "SENTENCE_RATING_LIKE",
+        "SENTENCE_RATING_DISLIKE"
+      ],
+      "default": "SENTENCE_RATING_NONE"
+    },
+    "v1SignInResult": {
+      "type": "object"
+    },
+    "v1SignUpResult": {
+      "type": "object"
+    }
+  }
+}

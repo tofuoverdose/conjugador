@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package conjugador.profile.v1;
+
+option go_package = "el-conjugador/proto/gen/conjugador/v1/profile";
+
+import "conjugador/common/common.proto";
+
+service Service {
+  rpc GetMyProfile(common.Void) returns (Profile);
+}
+
+message Profile {
+  string id = 1;
+  string name = 2;
+}

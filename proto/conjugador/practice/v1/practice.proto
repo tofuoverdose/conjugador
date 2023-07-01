@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package conjugador.practice.v1;
+
+option go_package = "el-conjugador/proto/gen/conjugador/v1/practice";
+
+import "conjugador/common/common.proto";
+
+service Service {
+  rpc GetPracticeSet(GetPracticeSetParams) returns (GetPracticeSetResult);
+  rpc ListVerbsInPracticeSet(ListVerbsInPracticeSetParams) returns (ListVerbsInPracticeSetResult);
+  rpc AddVerbToPracticeSet(AddVerbToPracticeSetParams) returns (common.Void);
+  rpc RemoveVerbFromPracticeSet(RemoveVerbFromPracticeSetParams) returns (RemoveVerbFromPracticeSetResult);
+  rpc Exercise(ExerciseParams) returns (ExerciseResult);
+}
+
+message GetPracticeSetParams {
+  string PracticeSetId = 1;
+}
+
+message GetPracticeSetResult {
+
+}
+
+message ListVerbsInPracticeSetParams {
+
+}
+
+message ListVerbsInPracticeSetResult {
+
+}
+
+message AddVerbToPracticeSetParams {
+  string PracticeSetId = 1;
+  string verbId = 2;
+}
+
+message RemoveVerbFromPracticeSetParams {
+
+}
+
+message RemoveVerbFromPracticeSetResult {
+
+}
+
+message PracticeSet {
+  string id = 1;
+  string ownerId = 2;
+
+}
+
+message ExerciseParams {
+  string PracticeSetId = 1;
+  int64 sentencesCount = 2;
+}
+
+message ExerciseResult {
+  repeated Sentence sentences = 1;
+}
+
+message Sentence {
+  string id = 1;
+  string text = 2;
+  int64 blankPosition = 3;
+  string answer = 4;
+}
