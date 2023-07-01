@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package conjugador.profile.v1;
 
-option go_package = "el-conjugador/proto/gen/conjugador/v1/profile";
+option go_package = "github.com/tofuoverdose/conjugador/proto/gen/conjugador/v1/profile";
 
 import "conjugador/common/common.proto";
 

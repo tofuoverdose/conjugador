@@ -6,7 +6,7 @@ import "conjugador/common/common.proto";
 import "google/api/annotations.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 
-option go_package = "el-conjugador/proto/gen/conjugador/v1/auth";
+option go_package = "github.com/tofuoverdose/conjugador/proto/gen/conjugador/v1/auth";
 
 service Service {
   rpc SignUp(SignUpParams) returns (SignUpResult);

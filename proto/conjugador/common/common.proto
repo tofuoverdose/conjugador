@@ -2,6 +2,6 @@ syntax = "proto3";
 
 package conjugador.common;
 
-option go_package = "el-conjugador/proto/gen/conjugador/common";
+option go_package = "github.com/tofuoverdose/conjugador/proto/gen/conjugador/common";
 
 message Void {}

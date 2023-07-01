@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package conjugador.verb.v1;
 
-option go_package = "el-conjugador/proto/gen/conjugador/v1/verb";
+option go_package = "github.com/tofuoverdose/conjugador/proto/gen/conjugador/v1/verb";
 
 service Service {
   rpc SearchVerbs(SearchVerbsParams) returns (SearchVerbsResult);

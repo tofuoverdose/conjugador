@@ -4,7 +4,7 @@ package conjugador.annotation;
 
 import "protoc-gen-openapiv2/options/annotations.proto";
 
-option go_package = "el-conjugador/proto/gen/conjugador";
+option go_package = "github.com/tofuoverdose/conjugador/proto/gen/conjugador";
 
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   info: {

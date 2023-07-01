@@ -1,4 +1,4 @@
-module el-conjugador
+module github.com/tofuoverdose/conjugador
 
 go 1.20
 
